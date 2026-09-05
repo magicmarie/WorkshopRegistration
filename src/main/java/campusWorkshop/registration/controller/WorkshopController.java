@@ -37,5 +37,10 @@ public class WorkshopController {
         return ResponseEntity.status(HttpStatus.CREATED).body("Registration created successfully");
     }
 
+    @GetMapping("/{workshopId}/registrations")
+    public List<RegistrationResponse> getAllRegistrations(@PathVariable Long workshopId) {
+        return registrationService.getAllRegistrations(workshopId);
+    }
+
 
 }

@@ -31,6 +31,9 @@ public class RegistrationService {
         return workshopRepository.findById(workshopId).orElse(null);
     }
 
+    public List<RegistrationResponse> getAllRegistrations(Long workshopId) {
+        return workshopRepository.getAllRegistrationsByWorkshopId(workshopId);
+    }
 
     public RegistrationResponse registerStudentToWorkshop(Long workshopId, Long studentId, String studentName, String studentEmail, LocalDateTime registrationDate) {
         Workshop workshop = getWorkshopById(workshopId);

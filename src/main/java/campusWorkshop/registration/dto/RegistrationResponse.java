@@ -2,6 +2,8 @@ package campusWorkshop.registration.dto;
 
 import campusWorkshop.registration.entity.Registration;
 
+import java.util.List;
+
 public record RegistrationResponse(
         Long registrationId,
         Long studentId,
@@ -13,8 +15,8 @@ public record RegistrationResponse(
     public static RegistrationResponse fromEntity(Registration registration) {
         return new RegistrationResponse(
                 registration.getRegistrationId(),
-                registration.getStudentId(),
                 registration.getWorkshop().getWorkshopId(),
+                registration.getStudentId(),
                 registration.getStudentName(),
                 registration.getStudentEmail(),
                 registration.getRegistrationDate().toString()
